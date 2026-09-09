@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CarePoint Hospital</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            ✚
+        </div>
+
+        <div>
+            <h1>CarePoint</h1>
+            <p>Patient Navigation System</p>
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#appointment">
+            Appointment
+        </a>
+
+        <a href="#doctors">
+            Doctors
+        </a>
+
+        <a href="#saved">
+            My Appointments
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            SMART PATIENT NAVIGATION
+        </span>
+
+        <h2>
+            Find your doctor.<br>
+            Find your way.
+        </h2>
+
+        <p>
+            Enter your appointment information and get
+            clear directions to your doctor's waiting area.
+        </p>
+
+        <a href="#appointment" class="main-button">
+            Find My Appointment →
+        </a>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="hero-card-top">
+
+            <span class="hospital-icon">
+                🏥
+            </span>
+
+            <div>
+
+                <h3>
+                    CarePoint Hospital
+                </h3>
+
+                <p>
+                    Main Hospital Building
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="hospital-stats">
+
+            <div>
+                <strong>
+                    4
+                </strong>
+
+                <span>
+                    Floors
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    10
+                </strong>
+
+                <span>
+                    Doctors
+                </span>
+            </div>
+
+
+            <div>
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    Emergency
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="appointment-section" id="appointment">
+
+    <div class="section-title">
+
+        <span>
+            PATIENT APPOINTMENT
+        </span>
+
+        <h2>
+            Find your appointment
+        </h2>
+
+        <p>
+            Tell us where you are and who you are visiting.
+        </p>
+
+    </div>
+
+
+
+    <div class="appointment-form">
+
+
+        <div class="form-group">
+
+            <label>
+                Patient Name
+            </label>
+
+            <input
+                type="text"
+                id="patientName"
+                placeholder="Enter patient name"
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                Where are you now?
+            </label>
+
+            <select id="currentLocation">
+
+                <option value="">
+                    Select your current location
+                </option>
+
+                <option value="Main Entrance">
+                    Main Entrance
+                </option>
+
+                <option value="Reception">
+                    Reception
+                </option>
+
+                <option value="Emergency">
+                    Emergency
+                </option>
+
+                <option value="Pharmacy">
+                    Pharmacy
+                </option>
+
+                <option value="Ground Floor Waiting Area">
+                    Ground Floor Waiting Area
+                </option>
+
+                <option value="1st Floor">
+                    1st Floor
+                </option>
+
+                <option value="2nd Floor">
+                    2nd Floor
+                </option>
+
+                <option value="3rd Floor">
+                    3rd Floor
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                Select Department
+            </label>
+
+            <select id="department">
+
+                <option value="">
+                    Select department
+                </option>
+
+                <option value="Cardiology">
+                    Cardiology
+                </option>
+
+                <option value="Neurology">
+                    Neurology
+                </option>
+
+                <option value="General Medicine">
+                    General Medicine
+                </option>
+
+                <option value="Radiology">
+                    Radiology
+                </option>
+
+                <option value="Laboratory">
+                    Laboratory
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label>
+                Select Doctor
+            </label>
+
+            <select id="doctor">
+
+                <option value="">
+                    Select department first
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <button
+            class="find-button"
+            onclick="findAppointment()"
+        >
+            Find Appointment →
+        </button>
+
+    </div>
+
+
+
+    <div id="appointmentResult">
+
+    </div>
+
+</section>
+
+
+
+<section class="doctors-section" id="doctors">
+
+    <div class="section-title">
+
+        <span>
+            DOCTOR INFORMATION
+        </span>
+
+        <h2>
+            Our Doctors
+        </h2>
+
+        <p>
+            Check doctor timings, rooms and patient ratings.
+        </p>
+
+    </div>
+
+
+    <div id="doctorCards" class="doctor-grid">
+
+    </div>
+
+</section>
+
+
+
+<section class="saved-section" id="saved">
+
+    <div class="section-title">
+
+        <span>
+            SAVED APPOINTMENTS
+        </span>
+
+        <h2>
+            My Appointments
+        </h2>
+
+        <p>
+            Your saved appointments are stored in this browser.
+        </p>
+
+    </div>
+
+
+    <div id="savedAppointments">
+
+    </div>
+
+</section>
+
+
+
+<footer>
+
+    <div>
+
+        <strong>
+            CarePoint Hospital
+        </strong>
+
+        <p>
+            Smart Patient Navigation System
+        </p>
+
+    </div>
+
+
+    <p>
+        © 2026 CarePoint Hospital
+    </p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
